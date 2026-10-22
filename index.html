@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Prathiksha 🌹</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background: #f7e4e4;
+  font-family: 'Playfair Display', serif;
+  color: #633d37;
+}
+
+/* Background */
+.background {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at top, #fff4ef, transparent 65%),
+    linear-gradient(135deg, #f8e5e1, #edc7c7);
+  z-index: -2;
+}
+
+.petals {
+  position: fixed;
+  top: -30px;
+  color: #c66b7b;
+  opacity: 0.6;
+  pointer-events: none;
+  animation: falling linear infinite;
+  z-index: 10;
+}
+
+@keyframes falling {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+/* Envelope screen */
+.envelope-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: opacity 0.7s, transform 0.7s;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.intro h1 {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(32px, 7vw, 48px);
+  color: #9d4d58;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  font-size: 14px;
+  color: #976c68;
+  font-style: italic;
+}
+
+.envelope {
+  width: min(330px, 85vw);
+  height: 215px;
+  position: relative;
+  background: #cf8b91;
+  border-radius: 4px;
+  box-shadow: 0 22px 45px #8e555533;
+  cursor: default;
+}
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  background: #dca1a1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.envelope-left,
+.envelope-right,
+.envelope-bottom {
+  position: absolute;
+  inset: 0;
+}
+
+.envelope-left {
+  background: #e8b5ad;
+  clip-path: polygon(0 0, 53% 55%, 0 100%);
+}
+
+.envelope-right {
+  background: #dca09c;
+  clip-path: polygon(100% 0, 47% 55%, 100% 100%);
+}
+
+.envelope-bottom {
+  background: #edc1b6;
+  clip-path: polygon(0 100%, 50% 42%, 100% 100%);
+}
+
+.envelope-flap {
+  position: absolute;
+  inset: 0;
+  background: #e7aaa8;
+  clip-path: polygon(0 0, 100% 0, 50% 58%);
+  transform-origin: top;
+  transition: transform 0.8s ease;
+  z-index: 4;
+}
+
+/* Rose button */
+.rose-button {
+  position: absolute;
+  z-index: 6;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75px;
+  height: 75px;
+  border: 2px solid #f9d8cb;
+  border-radius: 50%;
+  background: radial-gradient(circle, #a6424f, #742c3c);
+  box-shadow: 0 4px 15px #74344155;
+  font-size: 39px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.rose-button:hover {
+  transform: translate(-50%, -50%) scale(1.12);
+}
+
+.click-hint {
+  margin-top: 32px;
+  color: #965b63;
+  font-family: 'Caveat', cursive;
+  font-size: 25px;
+}
+
+/* Full page letter */
+.letter-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: #3e2923;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease, visibility 0.8s;
+  overflow-y: auto;
+}
+
+.letter-paper {
+  position: relative;
+  width: min(760px, 100%);
+  min-height: min(900px, 94vh);
+  max-height: 96vh;
+  overflow-y: auto;
+  padding: clamp(35px, 7vw, 75px);
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 10% 15%, #b69a6d22, transparent 35%),
+    radial-gradient(ellipse at 90% 80%, #a47b4b22, transparent 40%),
+    linear-gradient(135deg, #f7edcf, #efe0b8 55%, #f6e9ca);
+  color: #604637;
+  clip-path: polygon(
+    2% 1%, 8% 2%, 14% 0%, 22% 2%, 31% 1%,
+    40% 2%, 49% 0%, 59% 2%, 68% 1%, 77% 2%,
+    87% 0%, 98% 2%, 97% 10%, 100% 18%,
+    98% 28%, 100% 39%, 98% 50%, 100% 61%,
+    98% 73%, 100% 84%, 97% 98%, 87% 97%,
+    76% 100%, 66% 98%, 55% 100%, 44% 98%,
+    34% 100%, 23% 98%, 13% 100%, 2% 97%,
+    3% 87%, 0% 76%, 2% 64%, 0% 52%,
+    2% 40%, 0% 29%, 2% 18%
+  );
+  box-shadow: 0 15px 50px #00000055;
+  transform: scale(0.65) translateY(40px);
+  opacity: 0;
+  transition: transform 1s cubic-bezier(.2,.8,.2,1), opacity 1s;
+}
+
+.letter-inner {
+  border: 1px solid #9e795344;
+  padding: clamp(20px, 5vw, 42px) 12px;
+  min-height: 100%;
+}
+
+.letter-top {
+  font-family: 'Caveat', cursive;
+  font-size: 24px;
+  color: #9d6252;
+  margin-bottom: 20px;
+}
+
+.rose-decoration {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.letter-paper h1 {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(38px, 8vw, 64px);
+  color: #8f3e48;
+  font-weight: 600;
+  line-height: 1.05;
+  margin-bottom: 12px;
+}
+
+.date {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  color: #9b7157;
+}
+
+.dear {
+  font-family: 'Caveat', cursive;
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+
+.message {
+  max-width: 480px;
+  margin: 0 auto;
+  font-size: clamp(15px, 2.6vw, 18px);
+  line-height: 1.95;
+}
+
+.message p {
+  margin-bottom: 16px;
+}
+
+.signature {
+  font-family: 'Caveat', cursive;
+  font-size: 28px;
+  color: #9d4d58;
+  margin-top: 25px;
+}
+
+.close-button {
+  margin-top: 25px;
+  padding: 10px 22px;
+  border: 1px solid #a77d66;
+  border-radius: 30px;
+  background: transparent;
+  color: #704b3e;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+body.opened .envelope-screen {
+  opacity: 0;
+  transform: scale(1.1);
+  pointer-events: none;
+}
+
+body.opened .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+body.opened .rose-button {
+  opacity: 0;
+}
+
+body.opened .letter-screen {
+  visibility: visible;
+  opacity: 1;
+}
+
+body.opened .letter-paper {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .letter-screen {
+    padding: 8px;
+  }
+
+  .letter-paper {
+    min-height: 94vh;
+    max-height: 96vh;
+    padding: 28px 22px;
+  }
+
+  .letter-inner {
+    padding: 28px 8px;
+  }
+
+  .date {
+    margin-bottom: 22px;
+    letter-spacing: 2px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<!-- Floating petals -->
+<script>
+for (let i = 0; i < 18; i++) {
+  const petal = document.createElement("div");
+  petal.className = "petals";
+  petal.textContent = Math.random() > 0.5 ? "✿" : "♥";
+  petal.style.left = Math.random() * 100 + "vw";
+  petal.style.animationDuration = (6 + Math.random() * 8) + "s";
+  petal.style.animationDelay = (Math.random() * 8) + "s";
+  petal.style.fontSize = (12 + Math.random() * 12) + "px";
+  document.body.appendChild(petal);
+}
+</script>
+
+<!-- First screen: envelope -->
+<main class="envelope-screen">
+  <div class="intro">
+    <h1>A little something for you...</h1>
+    <p>A special letter on your special day 🌷</p>
+  </div>
+
+  <div class="envelope">
+    <div class="envelope-back"></div>
+    <div class="envelope-left"></div>
+    <div class="envelope-right"></div>
+    <div class="envelope-bottom"></div>
+    <div class="envelope-flap"></div>
+
+    <button class="rose-button" id="openRose"
+      aria-label="Open your birthday letter">
+      🌹
+    </button>
+  </div>
+
+  <p class="click-hint">A little rose, a little surprise... 💌</p>
+</main>
+
+<!-- Full-page vintage letter -->
+<section class="letter-screen" id="letterScreen">
+  <article class="letter-paper">
+    <div class="letter-inner">
+
+      <div class="letter-top">A little letter, just for you</div>
+
+      <div class="rose-decoration">🌹</div>
+
+      <h1>Happy Birthday,<br>Prathiksha!</h1>
+
+      <div class="date">26 October 🎂</div>
+
+      <div class="dear">Dear Prathiksha, 💗</div>
+
+      <div class="message">
+        <p>
+          On your special day, I hope the world gives you
+          a hundred little reasons to smile.
+        </p>
+
+        <p>
+          May your days be filled with beautiful moments,
+          unexpected happiness, and dreams that slowly
+          become your reality. 🌷
+        </p>
+
+        <p>
+          Keep being yourself, keep shining in your own
+          beautiful way, and never forget how much
+          a little kindness and a smile can mean.
+        </p>
+
+        <p>
+          I hope this new chapter of your life brings you
+          everything your heart has been wishing for.
+        </p>
+
+        <p>
+          Today is your day. Smile a little more,
+          laugh a little louder, and make a memory
+          worth keeping. ❤️
+        </p>
+      </div>
+
+      <div class="signature">
+        Wishing you a beautiful birthday ✨
+      </div>
+
+      <button class="close-button" id="closeLetter">
+        Close letter ✉
+      </button>
+
+    </div>
+  </article>
+</section>
+
+<script>
+const openRose = document.getElementById("openRose");
+const closeLetter = document.getElementById("closeLetter");
+
+openRose.addEventListener("click", () => {
+  document.body.classList.add("opened");
+});
+
+closeLetter.addEventListener("click", () => {
+  document.body.classList.remove("opened");
+});
+</script>
+
+</body>
+</html>
